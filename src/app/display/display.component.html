@@ -1,0 +1,21 @@
+<div id="main-container">
+    <h1>CAV Weather App</h1>
+<h2>La tua città, le tue previsioni adesso</h2>
+<h3>Previsioni Correnti</h3>
+
+<div id="display-and-submit-container">
+<input placeholder="Write a city" [(ngModel)]="cityInseriment"> 
+<button (click)="getData()">Submit</button>
+
+<ng-container  *ngIf="weather">
+<p>{{weather.name}}</p>
+<p>{{weather.sys.country}}</p>  
+<p>{{today | date}}</p>
+<p>{{weather.main.temp | number:'1.0-0'}} C°</p>
+<p>{{weather.weather[0].description}}</p>
+<img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png">
+</ng-container>
+</div>
+
+
+</div>
